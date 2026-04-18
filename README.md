@@ -3,15 +3,15 @@
 
 | Entité       | Attributs                                      | Comportements                |
 |-------------|-----------------------------------------------|------------------------------|
-| Personne    | id:int, nom:string, prenom:string, age:int     | SePresenter()                |
-| Joueur      | numero:int, poste:string                       | Jouer()                      |
-| Entraineur  | experience:int, licence:string                 | Coacher()                    |
-| Arbitre     | niveau:string, licence:string                  | Arbitrer()                   |
-| Club        | nom:string, ville:string, budget:double        | AjouterEquipe(equipe:Equipe) |
-| Equipe      | nom:string, division:string                    | AjouterJoueur()              |
-| Match       | date:DateTime, score:string, adversaire:string | Jouer()                      |
-| Salle       | nom:string, capacite:int                       | Ouvrir()                     |
-| Sponsor     | nom:string, montant:double                     | Jouer()                      |
+| Personne    | id: int, nom:string, prenom: string, age: int     | SePresenter()                |
+| Joueur      | numero: int, poste: string                       | Jouer()                      |
+| Entraineur  | experience: int, licence: string                 | Coacher()                    |
+| Arbitre     | niveau: string, licence: string                  | Arbitrer()                   |
+| Club        | nom: string, ville: string, budget: double        | AjouterEquipe(equipe: Equipe) |
+| Equipe      | nom: string, division: string                    | AjouterJoueur()              |
+| Match       | date: DateTime, score: string, adversaire: string | Jouer()                      |
+| Salle       | nom: string, capacite: int                       | Ouvrir()                     |
+| Sponsor     | nom: string, montant: double                     | Jouer()                      |
 
 ---
 
