@@ -15,7 +15,21 @@
 
 ---
 
-## Relations
+### Héritage
+
+- Joueur hérite de Personne  
+- Entraineur hérite de Personne  
+- Arbitre hérite de Personne  
+
+### Associations
+
+- Club possède une Equipe  
+- Equipe possède des Joueurs  
+- Equipe possède un Entraineur  
+- Match implique une Equipe  
+- Match se joue dans une Salle  
+ 
+ ## Tableau des relations
 
 | Classe A   | Relation        | Classe B   | Justification                              |
 |------------|----------------|------------|--------------------------------------------|
@@ -28,3 +42,4 @@
 | Club       | associe        | Arbitre    | Un club peut inclure des arbitres          |
 | Equipe     | participe à    | Match      | Une équipe joue des matchs                 |
 | Match      | se joue dans   | Salle      | Un match se déroule dans une salle         |      |
+
