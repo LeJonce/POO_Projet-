@@ -44,5 +44,6 @@
 | Match      | se joue dans   | Salle      | Un match se déroule dans une salle         |      |
 
 ## Schéma UML 
-![This is an alt text.](/image/Markdown-mark.svg "This is a sample image.")
+<img width="1024" height="1536" alt="ChatGPT Image 18 avr  2026 à 22_55_19" src="https://github.com/user-attachments/assets/b28d453c-9fc8-4a8f-84af-dc1eb4596ab8" />
+
 
