@@ -1,5 +1,5 @@
 # Projet C#
-## Étape 2 — Liste des entités
+## Liste des entités
 
 | Entité       | Attributs                                      | Comportements                |
 |-------------|-----------------------------------------------|------------------------------|
@@ -15,7 +15,7 @@
 
 ---
 
-## Étape 3 — Relations
+## Relations
 
 | Classe A   | Relation        | Classe B   | Justification                              |
 |------------|----------------|------------|--------------------------------------------|
