@@ -43,3 +43,6 @@
 | Equipe     | participe à    | Match      | Une équipe joue des matchs                 |
 | Match      | se joue dans   | Salle      | Un match se déroule dans une salle         |      |
 
+## Schéma UML 
+![This is an alt text.](/image/Markdown-mark.svg "This is a sample image.")
+
