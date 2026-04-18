@@ -11,7 +11,7 @@
 | Equipe      | nom, division                   | AjouterJoueur()              |
 | Match       | date, score, adversaire | Jouer()                      |
 | Salle       | nom, capacite                     | Ouvrir()                     |
-| Sponsor     | nom: , montant                    | Jouer()                      |
+
 
 ---
 
@@ -27,6 +27,4 @@
 | Club       | associe        | Entraineur | Un club a des entraîneurs                  |
 | Club       | associe        | Arbitre    | Un club peut inclure des arbitres          |
 | Equipe     | participe à    | Match      | Une équipe joue des matchs                 |
-| Match      | se joue dans   | Salle      | Un match se déroule dans une salle         |
-| Sponsor    | finance        | Club       | Un sponsor finance un club                 |
-| Sponsor    | associe        | Match      | Un sponsor peut être lié à un match        |
+| Match      | se joue dans   | Salle      | Un match se déroule dans une salle         |      |
