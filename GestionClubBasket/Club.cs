@@ -4,33 +4,40 @@ namespace GestionClubBasket
 {
     public class Club
     {
-        // Attributs
-        private string nom;
-        private string ville;
-        private double budget;
+        // 2. Attributs privés
+        private string _nom;
+        private string _ville;
+        private double _budget;
+        private List<Equipe> _equipes = new List<Equipe>();
+        private List<Sponsor> _sponsors = new List<Sponsor>();
 
-        // Propriétés publiques
-        public string Nom { get => nom; set => nom = value; }
-        public string Ville { get => ville; set => ville = value; }
-        public double Budget { get => budget; set => budget = value; }
+        // 3. Constructeur qui initialise les attributs
+        public Club(string nom, string ville, double budget)
+        {
+            _nom = nom;
+            _ville = ville;
+            _budget = budget;
+        }
 
-        // Composition : un Club possède ses Equipes (0..*)
-        private List<Equipe> equipes = new List<Equipe>();
-        public List<Equipe> Equipes => equipes;
+        // 4. Propriétés en lecture seule
+        public string Nom => _nom;
+        public string Ville => _ville;
+        public double Budget => _budget;
 
-        // Association : un Club est financé par des Sponsors
-        private List<Sponsor> sponsors = new List<Sponsor>();
-        public List<Sponsor> Sponsors => sponsors;
+        // Composition : les listes elles-mêmes sont en lecture seule, leur
+        // contenu se modifie via AjouterEquipe() / AjouterSponsor()
+        public List<Equipe> Equipes => _equipes;
+        public List<Sponsor> Sponsors => _sponsors;
 
-        // Comportements
+        // 5. Squelette des méthodes — sans implémentation
         public void AjouterEquipe(Equipe equipe)
         {
-            // TODO : logique à implémenter (ex. equipes.Add(equipe))
+            throw new System.NotImplementedException();
         }
 
         public void AjouterSponsor()
         {
-            // TODO : logique à implémenter
+            throw new System.NotImplementedException();
         }
     }
 }

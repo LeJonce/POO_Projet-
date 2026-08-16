@@ -4,25 +4,33 @@ namespace GestionClubBasket
 {
     public class Equipe
     {
-        // Attributs
-        private string nom;
-        private string division;
+        // 2. Attributs privés
+        private string _nom;
+        private string _division;
+        private List<Joueur> _joueurs = new List<Joueur>();
+        private Entraineur _entraineur;
 
-        // Propriétés publiques
-        public string Nom { get => nom; set => nom = value; }
-        public string Division { get => division; set => division = value; }
+        // 3. Constructeur qui initialise les attributs
+        public Equipe(string nom, string division, Entraineur entraineur)
+        {
+            _nom = nom;
+            _division = division;
+            _entraineur = entraineur;
+        }
 
-        // Composition : une Equipe possède ses Joueurs (1..*)
-        private List<Joueur> joueurs = new List<Joueur>();
-        public List<Joueur> Joueurs => joueurs;
+        // 4. Propriétés en lecture seule
+        public string Nom => _nom;
+        public string Division => _division;
+        public Entraineur Entraineur => _entraineur;
 
-        // Association : une Equipe a un Entraineur (0..1)
-        public Entraineur Entraineur { get; set; }
+        // Composition : la liste elle-même est en lecture seule (pas de nouvelle liste
+        // assignable de l'extérieur), mais son contenu se modifie via AjouterJoueur()
+        public List<Joueur> Joueurs => _joueurs;
 
-        // Comportements
+        // 5. Squelette des méthodes — sans implémentation
         public void AjouterJoueur()
         {
-            // TODO : logique à implémenter (ex. joueurs.Add(...))
+            throw new System.NotImplementedException();
         }
     }
 }

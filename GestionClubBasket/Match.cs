@@ -4,33 +4,42 @@ namespace GestionClubBasket
 {
     public class Match
     {
-        // Attributs
-        private DateTime date;
-        private string score;
+        // 2. Attributs privés
+        private DateTime _date;
+        private string _score;
+        private Equipe _equipeDomicile;
+        private Equipe _equipeVisiteur;
+        private Arbitre _arbitre;
+        private Salle _salle;
 
-        // Propriétés publiques
-        public DateTime Date { get => date; set => date = value; }
-        public string Score { get => score; set => score = value; }
+        // 3. Constructeur qui initialise les attributs
+        public Match(DateTime date, string score, Equipe equipeDomicile, Equipe equipeVisiteur, Arbitre arbitre, Salle salle)
+        {
+            _date = date;
+            _score = score;
+            _equipeDomicile = equipeDomicile;
+            _equipeVisiteur = equipeVisiteur;
+            _arbitre = arbitre;
+            _salle = salle;
+        }
 
-        // Associations : un Match implique 2 Equipes
-        public Equipe EquipeDomicile { get; set; }
-        public Equipe EquipeVisiteur { get; set; }
+        // 4. Propriétés en lecture seule
+        public DateTime Date => _date;
+        public string Score => _score;
+        public Equipe EquipeDomicile => _equipeDomicile;
+        public Equipe EquipeVisiteur => _equipeVisiteur;
+        public Arbitre Arbitre => _arbitre;
+        public Salle Salle => _salle;
 
-        // Association : un Match est dirigé par un Arbitre
-        public Arbitre Arbitre { get; set; }
-
-        // Association : un Match se joue dans une Salle
-        public Salle Salle { get; set; }
-
-        // Comportements
+        // 5. Squelette des méthodes — sans implémentation
         public void Jouer()
         {
-            // TODO : logique à implémenter
+            throw new NotImplementedException();
         }
 
         public void DefinirScore()
         {
-            // TODO : logique à implémenter
+            throw new NotImplementedException();
         }
     }
 }

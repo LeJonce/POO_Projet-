@@ -2,12 +2,19 @@ namespace GestionClubBasket
 {
     public class Salle
     {
-        // Attributs
-        private string nom;
-        private int capacite;
+        // 2. Attributs privés
+        private string _nom;
+        private int _capacite;
 
-        // Propriétés publiques
-        public string Nom { get => nom; set => nom = value; }
-        public int Capacite { get => capacite; set => capacite = value; }
+        // 3. Constructeur qui initialise les attributs
+        public Salle(string nom, int capacite)
+        {
+            _nom = nom;
+            _capacite = capacite;
+        }
+
+        // 4. Propriétés en lecture seule
+        public string Nom => _nom;
+        public int Capacite => _capacite;
     }
 }

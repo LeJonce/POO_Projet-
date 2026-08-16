@@ -2,18 +2,25 @@ namespace GestionClubBasket
 {
     public class Sponsor
     {
-        // Attributs
-        private string nom;
-        private double montant;
+        // 2. Attributs privés
+        private string _nom;
+        private double _montant;
 
-        // Propriétés publiques
-        public string Nom { get => nom; set => nom = value; }
-        public double Montant { get => montant; set => montant = value; }
+        // 3. Constructeur qui initialise les attributs
+        public Sponsor(string nom, double montant)
+        {
+            _nom = nom;
+            _montant = montant;
+        }
 
-        // Comportements
+        // 4. Propriétés en lecture seule
+        public string Nom => _nom;
+        public double Montant => _montant;
+
+        // 5. Squelette des méthodes — sans implémentation
         public void Financer()
         {
-            // TODO : logique à implémenter
+            throw new System.NotImplementedException();
         }
     }
 }

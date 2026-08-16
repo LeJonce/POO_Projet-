@@ -1,0 +1,15 @@
+/Users/joncymafuta/POO_Projet-/GestionClubBasket/bin/Debug/net8.0/GestionClubBasket
+/Users/joncymafuta/POO_Projet-/GestionClubBasket/bin/Debug/net8.0/GestionClubBasket.deps.json
+/Users/joncymafuta/POO_Projet-/GestionClubBasket/bin/Debug/net8.0/GestionClubBasket.runtimeconfig.json
+/Users/joncymafuta/POO_Projet-/GestionClubBasket/bin/Debug/net8.0/GestionClubBasket.dll
+/Users/joncymafuta/POO_Projet-/GestionClubBasket/bin/Debug/net8.0/GestionClubBasket.pdb
+/Users/joncymafuta/POO_Projet-/GestionClubBasket/obj/Debug/net8.0/GestionClubBasket.GeneratedMSBuildEditorConfig.editorconfig
+/Users/joncymafuta/POO_Projet-/GestionClubBasket/obj/Debug/net8.0/GestionClubBasket.AssemblyInfoInputs.cache
+/Users/joncymafuta/POO_Projet-/GestionClubBasket/obj/Debug/net8.0/GestionClubBasket.AssemblyInfo.cs
+/Users/joncymafuta/POO_Projet-/GestionClubBasket/obj/Debug/net8.0/GestionClubBasket.csproj.CoreCompileInputs.cache
+/Users/joncymafuta/POO_Projet-/GestionClubBasket/obj/Debug/net8.0/GestionClubBasket.sourcelink.json
+/Users/joncymafuta/POO_Projet-/GestionClubBasket/obj/Debug/net8.0/GestionClubBasket.dll
+/Users/joncymafuta/POO_Projet-/GestionClubBasket/obj/Debug/net8.0/refint/GestionClubBasket.dll
+/Users/joncymafuta/POO_Projet-/GestionClubBasket/obj/Debug/net8.0/GestionClubBasket.pdb
+/Users/joncymafuta/POO_Projet-/GestionClubBasket/obj/Debug/net8.0/GestionClubBasket.genruntimeconfig.cache
+/Users/joncymafuta/POO_Projet-/GestionClubBasket/obj/Debug/net8.0/ref/GestionClubBasket.dll

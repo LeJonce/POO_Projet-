@@ -2,23 +2,30 @@ namespace GestionClubBasket
 {
     public class Joueur : Personne
     {
-        // Attributs
-        private int numero;
-        private string poste;
+        // 2. Attributs privés
+        private int _numero;
+        private string _poste;
 
-        // Propriétés publiques
-        public int Numero { get => numero; set => numero = value; }
-        public string Poste { get => poste; set => poste = value; }
+        // 3. Constructeur qui initialise les attributs (et ceux de Personne via base)
+        public Joueur(int id, string nom, string prenom, int age, int numero, string poste)
+            : base(id, nom, prenom, age)
+        {
+            _numero = numero;
+            _poste = poste;
+        }
 
-        // Comportements
+        // 4. Propriétés en lecture seule
+        public int Numero => _numero;
+        public string Poste => _poste;
+
+        // 5. Squelette des méthodes — sans implémentation
         public void Jouer()
         {
-            // TODO : logique à implémenter
+            throw new System.NotImplementedException();
         }
 
         public override string Role()
         {
-            // TODO : retourner "Joueur"
             throw new System.NotImplementedException();
         }
     }
