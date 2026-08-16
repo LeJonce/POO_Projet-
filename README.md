@@ -39,9 +39,9 @@
 | Club       | possède        | Equipe     | Un club contient une ou plusieurs équipes  |
 | Equipe     | possède        | Joueur     | Une équipe regroupe des joueurs            |
 | Equipe     | possède        | Entraineur | Une équipe a un entraîneur                 |
-| Equipe     | participe à    | Match      | Une équipe a un entraîneur                 |
-| Match      | associe        | Arbitre    | Un match est arbitré                      |
-| Match      | se joue dans   | Salle      | Un match se déroule dans une salle         |      | comme ici juste tu enleves le doublon et tu mets ce qui manque
+| Equipe     | participe à    | Match      | Une équipe joue des matchs                 |
+| Match      | associe        | Arbitre    | Un match est arbitré                       |
+| Match      | se joue dans   | Salle      | Un match se déroule dans une salle         |      | 
 
 ## Schéma UML 
 <img width="1024" height="1536" alt="ChatGPT Image 18 avr  2026 à 22_55_19" src="https://github.com/user-attachments/assets/b28d453c-9fc8-4a8f-84af-dc1eb4596ab8" />
