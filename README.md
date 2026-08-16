@@ -40,8 +40,7 @@
 | Equipe     | possède        | Joueur     | Une équipe regroupe des joueurs            |
 | Equipe     | possède        | Entraineur | Une équipe a un entraîneur                 |
 | Equipe     | participe à    | Match      | Une équipe a un entraîneur                 |
-| Match      | associe        | Arbitre    | Un match est arbitrés                      |
-| Equipe     | participe à    | Match      | Une équipe joue des matchs                 |
+| Match      | associe        | Arbitre    | Un match est arbitré                      |
 | Match      | se joue dans   | Salle      | Un match se déroule dans une salle         |      | comme ici juste tu enleves le doublon et tu mets ce qui manque
 
 ## Schéma UML 
