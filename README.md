@@ -36,14 +36,14 @@
 | Joueur     | hérite de      | Personne   | Un joueur est une personne                 |
 | Entraineur | hérite de      | Personne   | Un entraîneur est une personne             |
 | Arbitre    | hérite de      | Personne   | Un arbitre est une personne                |
-| Club       | possède        | Equipe     | Un club contient des équipes               |
-| Club       | associe        | Joueur     | Un club regroupe des joueurs               |
-| Club       | associe        | Entraineur | Un club a des entraîneurs                  |
-| Club       | associe        | Arbitre    | Un club peut inclure des arbitres          |
+| Club       | possède        | Equipe     | Un club contient une ou plusieurs équipes  |
+| Equipe     | possède        | Joueur     | Une équipe regroupe des joueurs            |
+| Equipe     | possède        | Entraineur | Une équipe a un entraîneur                 |
 | Equipe     | participe à    | Match      | Une équipe joue des matchs                 |
-| Match      | se joue dans   | Salle      | Un match se déroule dans une salle         |      |
+| Match      | associe        | Arbitre    | Un match est arbitré                       |
+| Match      | se joue dans   | Salle      | Un match se déroule dans une salle         |      | 
 
 ## Schéma UML 
-<img width="1024" height="1536" alt="ChatGPT Image 18 avr  2026 à 22_55_19" src="https://github.com/user-attachments/assets/b28d453c-9fc8-4a8f-84af-dc1eb4596ab8" />
+<img width="1160" height="1220" alt="diagramme_uml_club_basket" src="https://github.com/user-attachments/assets/aafb02ab-edb8-44be-8b83-e168c7a10ea0" />
 
 
