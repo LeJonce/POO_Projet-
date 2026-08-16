@@ -44,7 +44,6 @@
 | Match      | se joue dans   | Salle      | Un match se déroule dans une salle         |      | 
 
 ## Schéma UML 
-<img width="1024" height="1536" alt="ChatGPT Image 18 avr  2026 à 22_55_19" src="https://github.com/user-attachments/assets/b28d453c-9fc8-4a8f-84af-dc1eb4596ab8" />
+<img width="1160" height="1220" alt="diagramme_uml_club_basket" src="https://github.com/user-attachments/assets/aafb02ab-edb8-44be-8b83-e168c7a10ea0" />
 
 
-<img width="735" height="493" alt="6cfd8695294abe0d6e29601d5e446004" src="https://github.com/user-attachments/assets/2c7f0d75-9e3d-4482-9b4c-0dea9c4b3362" />
