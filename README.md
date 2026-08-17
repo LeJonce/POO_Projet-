@@ -44,6 +44,5 @@
 | Location | associe   | Client    | Une location est faite par un client            |
 | Location | associe   | Assurance | Une location peut inclure une assurance         |
 ## Schéma UML 
-<img width="1160" height="1220" alt="diagramme_uml_club_basket" src="https://github.com/user-attachments/assets/aafb02ab-edb8-44be-8b83-e168c7a10ea0" />
 
 
