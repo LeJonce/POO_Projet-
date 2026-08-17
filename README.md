@@ -28,8 +28,6 @@
 - Location associe un Vehicule
 - Location associe un Client
 - Location associe une Assurance
- 
- ## Tableau des relations
 
 ## Tableau des relations
 
