@@ -1,40 +1,38 @@
 # Projet C#
 ## Liste des entités
 
-| Entité       | Attributs                                      | Comportements                |
-|-------------|-----------------------------------------------|------------------------------|
-| Personne    | id, nom, prenom, age     | SePresenter()                |
-| Joueur      | numero, poste                       | Jouer()                      |
-| Entraineur  | experience, licence                | Coacher()                    |
-| Arbitre     | niveau, licence                 | Arbitrer()                   |
-| Club        | nom, ville, budget        | AjouterEquipe(equipe: Equipe) |
-| Equipe      | nom, division                   | AjouterJoueur()              |
-| Match       | date, score, adversaire | Jouer()                      |
-| Salle       | nom, capacite                     | Ouvrir()                     |
-
-
----
+| Entité    | Attributs | Comportements        |
+|-----------|-----------------------------------------------|----------------------|
+| Vehicule  | marque, modele, immatriculation, tarifDeBase CalculerTarifJournalier() |
+| Voiture   | nombrePlaces, typeCarburant                    | Demarrer()|
+| Moto      | cylindree                                      | Demarrer()                 |
+| Camion    | capaciteChargement                             | AssignerChauffeur()        |
+| Chauffeur | nom, prenom, permisPoidsLourd                  | Conduire()                 |
+| Client    | id, nom, prenom, numeroPermis                  | —                           |
+| Assurance | type, montantJournalier                        | Souscrire()                |
+| Location  | dateDebut, dateFin, prixTotal                  | CalculerPrix(), TerminerLocation() |
+| Agence    | nom, ville                                     | AjouterVehicule()          |
 
 ### Héritage
 
-- Joueur hérite de Personne  
-- Entraineur hérite de Personne  
-- Arbitre hérite de Personne  
+- Voiture hérite de Vehicule
+- Moto hérite de Vehicule
+- Camion hérite de Vehicule
 
 ### Associations
 
-- Club possède une Equipe  
-- Equipe possède des Joueurs  
-- Equipe possède un Entraineur  
-- Match implique une Equipe  
-- Match se joue dans une Salle  
+- Agence possède des Vehicule
+- Camion associe un Chauffeur
+- Location associe un Vehicule
+- Location associe un Client
+- Location associe une Assurance
  
  ## Tableau des relations
 
 | Classe A   | Relation        | Classe B   | Justification                              |
 |------------|----------------|------------|--------------------------------------------|
-| Joueur     | hérite de      | Personne   | Un joueur est une personne                 |
-| Entraineur | hérite de      | Personne   | Un entraîneur est une personne             |
+| Voiture     | hérite de      | Vehicule   | Une voiture est un véhicule          |
+| Entraineur | hérite de      | Personne   | Une moto est un véhicule              |
 | Arbitre    | hérite de      | Personne   | Un arbitre est une personne                |
 | Club       | possède        | Equipe     | Un club contient une ou plusieurs équipes  |
 | Equipe     | possède        | Joueur     | Une équipe regroupe des joueurs            |
