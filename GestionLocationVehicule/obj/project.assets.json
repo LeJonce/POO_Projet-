@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/joncymafuta/POO_Projet-/GestionClubBasket/GestionClubBasket.csproj",
-      "projectName": "GestionClubBasket",
-      "projectPath": "/Users/joncymafuta/POO_Projet-/GestionClubBasket/GestionClubBasket.csproj",
+      "projectUniqueName": "/Users/joncymafuta/POO_Projet-/GestionLocationVehicule/GestionLocationVehicule.csproj",
+      "projectName": "GestionLocationVehicule",
+      "projectPath": "/Users/joncymafuta/POO_Projet-/GestionLocationVehicule/GestionLocationVehicule.csproj",
       "packagesPath": "/Users/joncymafuta/.nuget/packages/",
-      "outputPath": "/Users/joncymafuta/POO_Projet-/GestionClubBasket/obj/",
+      "outputPath": "/Users/joncymafuta/POO_Projet-/GestionLocationVehicule/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/joncymafuta/.nuget/NuGet/NuGet.Config"

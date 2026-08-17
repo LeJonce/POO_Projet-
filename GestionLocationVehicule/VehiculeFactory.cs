@@ -1,6 +1,6 @@
 using System;
 
-namespace GestionClubBasket
+namespace GestionLocationVehicule
 {
     public enum TypeVehicule
     {
@@ -33,8 +33,9 @@ namespace GestionClubBasket
             switch (type)
             {
                 case TypeVehicule.Voiture:
+                    TypeCarburant carburant = (TypeCarburant)Enum.Parse(typeof(TypeCarburant), infoSpecifique2);
                     return new Voiture(marque, modele, immatriculation, tarifDeBase,
-                        int.Parse(infoSpecifique1), infoSpecifique2);
+                        int.Parse(infoSpecifique1), carburant);
 
                 case TypeVehicule.Moto:
                     return new Moto(marque, modele, immatriculation, tarifDeBase,

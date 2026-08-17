@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 
-namespace GestionClubBasket
+namespace GestionLocationVehicule
 {
     class Program
     {
@@ -36,15 +37,18 @@ namespace GestionClubBasket
                         CreerClient();
                         break;
                     case "3":
-                        LouerVehicule();
+                        CreerChauffeur();
                         break;
                     case "4":
-                        TerminerLocation();
+                        LouerVehicule();
                         break;
                     case "5":
-                        SouscrireAssurance();
+                        TerminerLocation();
                         break;
                     case "6":
+                        SouscrireAssurance();
+                        break;
+                    case "7":
                         AfficherEtatAgence();
                         break;
                     case "0":
@@ -63,10 +67,11 @@ namespace GestionClubBasket
             Console.WriteLine("----------------------------------");
             Console.WriteLine("1. Créer un véhicule");
             Console.WriteLine("2. Créer un client");
-            Console.WriteLine("3. Louer un véhicule");
-            Console.WriteLine("4. Terminer une location");
-            Console.WriteLine("5. Souscrire une assurance sur une location");
-            Console.WriteLine("6. Afficher l'état de l'agence");
+            Console.WriteLine("3. Créer un chauffeur (camion)");
+            Console.WriteLine("4. Louer un véhicule");
+            Console.WriteLine("5. Terminer une location");
+            Console.WriteLine("6. Souscrire une assurance sur une location");
+            Console.WriteLine("7. Afficher l'état de l'agence");
             Console.WriteLine("0. Quitter");
             Console.Write("Ton choix : ");
         }
@@ -94,8 +99,7 @@ namespace GestionClubBasket
                 case "1":
                     Console.Write("Nombre de places : ");
                     string places = LireEntier().ToString();
-                    Console.Write("Type de carburant : ");
-                    string carburant = Console.ReadLine();
+                    string carburant = ChoisirTypeCarburant();
                     v = VehiculeFactory.CreerVehicule(TypeVehicule.Voiture, marque, modele, immat, tarif, places, carburant);
                     break;
                 case "2":
@@ -138,7 +142,23 @@ namespace GestionClubBasket
             Console.WriteLine($"Client {prenom} {nom} créé.\n");
         }
 
-        // ===== 3. Louer un véhicule =====
+        // ===== 3. Créer un chauffeur =====
+        static void CreerChauffeur()
+        {
+            Console.Write("\nNom : ");
+            string nom = Console.ReadLine();
+            Console.Write("Prénom : ");
+            string prenom = Console.ReadLine();
+            Console.Write("Permis poids lourd ? (o/n) : ");
+            string reponse = Console.ReadLine();
+            bool permisPoidsLourd = reponse != null && reponse.Trim().ToLower().StartsWith("o");
+
+            Chauffeur chauffeur = new Chauffeur(nom, prenom, permisPoidsLourd);
+            chauffeurs.Add(chauffeur);
+            Console.WriteLine($"Chauffeur {prenom} {nom} créé.\n");
+        }
+
+        // ===== 4. Louer un véhicule =====
         static void LouerVehicule()
         {
             Client client = ChoisirClient();
@@ -146,6 +166,13 @@ namespace GestionClubBasket
 
             Vehicule vehicule = ChoisirVehiculeDisponible();
             if (vehicule == null) return;
+
+            // Un camion sans chauffeur ne peut pas être loué
+            if (vehicule is Camion camion && camion.Chauffeur == null)
+            {
+                Console.WriteLine("Ce camion n'a pas de chauffeur assigné (crée-en un via l'option 3), la location est impossible.\n");
+                return;
+            }
 
             Console.Write("Nombre de jours de location : ");
             int jours = LireEntier();
@@ -161,14 +188,10 @@ namespace GestionClubBasket
             Console.WriteLine($"Location créée : {vehicule.Decrire()} pour {client.Prenom} {client.Nom}, {jours} jour(s), prix estimé : {location.PrixTotal}€\n");
         }
 
-        // ===== 4. Terminer une location =====
+        // ===== 5. Terminer une location =====
         static void TerminerLocation()
         {
-            List<Location> enCours = new List<Location>();
-            foreach (Location l in locations)
-            {
-                if (!l.Terminee) enCours.Add(l);
-            }
+            List<Location> enCours = ObtenirLocationsEnCours();
 
             if (enCours.Count == 0)
             {
@@ -193,14 +216,10 @@ namespace GestionClubBasket
             Console.WriteLine();
         }
 
-        // ===== 5. Souscrire une assurance =====
+        // ===== 6. Souscrire une assurance =====
         static void SouscrireAssurance()
         {
-            List<Location> enCours = new List<Location>();
-            foreach (Location l in locations)
-            {
-                if (!l.Terminee) enCours.Add(l);
-            }
+            List<Location> enCours = ObtenirLocationsEnCours();
 
             if (enCours.Count == 0)
             {
@@ -228,10 +247,11 @@ namespace GestionClubBasket
 
             Assurance assurance = new Assurance(type, montant);
             assurance.Souscrire();
-            Console.WriteLine("(Assurance enregistrée pour cette location.)\n");
+            enCours[choix - 1].AjouterAssurance(assurance);
+            Console.WriteLine();
         }
 
-        // ===== 6. Afficher l'état de l'agence =====
+        // ===== 7. Afficher l'état de l'agence =====
         static void AfficherEtatAgence()
         {
             Console.WriteLine($"\n=== {agence.Nom} ({agence.Ville}) ===");
@@ -250,25 +270,61 @@ namespace GestionClubBasket
             }
 
             Console.WriteLine("Locations en cours :");
-            bool aucune = true;
-            foreach (Location l in locations)
+            List<Location> enCours = ObtenirLocationsEnCours();
+            if (enCours.Count == 0)
             {
-                if (!l.Terminee)
+                Console.WriteLine("  (aucune)");
+            }
+            else
+            {
+                foreach (Location l in enCours)
                 {
-                    aucune = false;
-                    Console.WriteLine($"  - {l.Vehicule.Decrire()} par {l.Client.Prenom} {l.Client.Nom}, jusqu'au {l.DateFin:d}");
+                    string statutAssurance = l.Assurance != null ? $", avec assurance {l.Assurance.Type}" : "";
+                    Console.WriteLine($"  - {l.Vehicule.Decrire()} par {l.Client.Prenom} {l.Client.Nom}, jusqu'au {l.DateFin:d}, prix estimé : {l.PrixTotal}€{statutAssurance}");
                 }
             }
-            if (aucune) Console.WriteLine("  (aucune)");
             Console.WriteLine();
         }
 
         // ===== Utilitaires de sélection =====
+
+        // Centralise la récupération des locations non terminées, utilisée par
+        // TerminerLocation(), SouscrireAssurance() et AfficherEtatAgence()
+        // (évite de dupliquer la même boucle à trois endroits)
+        static List<Location> ObtenirLocationsEnCours()
+        {
+            List<Location> enCours = new List<Location>();
+            foreach (Location l in locations)
+            {
+                if (!l.Terminee) enCours.Add(l);
+            }
+            return enCours;
+        }
+
+        static string ChoisirTypeCarburant()
+        {
+            Console.WriteLine("Type de carburant :");
+            Console.WriteLine("  1. Essence");
+            Console.WriteLine("  2. Diesel");
+            Console.WriteLine("  3. Electrique");
+            int choix = LireEntier();
+
+            switch (choix)
+            {
+                case 1: return "Essence";
+                case 2: return "Diesel";
+                case 3: return "Electrique";
+                default:
+                    Console.WriteLine("Choix invalide, Essence par défaut.");
+                    return "Essence";
+            }
+        }
+
         static Chauffeur ChoisirChauffeur()
         {
             if (chauffeurs.Count == 0)
             {
-                Console.WriteLine("Aucun chauffeur disponible pour l'instant.");
+                Console.WriteLine("Aucun chauffeur disponible pour l'instant (crée-en un via l'option 3).");
                 return null;
             }
 
@@ -347,12 +403,20 @@ namespace GestionClubBasket
 
         static double LireDouble()
         {
-            double valeur;
-            while (!double.TryParse(Console.ReadLine(), out valeur))
+            while (true)
             {
+                string entree = Console.ReadLine();
+                if (entree != null)
+                {
+                    // Accepte aussi bien la virgule (40,5) que le point (40.5)
+                    string normalise = entree.Trim().Replace(',', '.');
+                    if (double.TryParse(normalise, NumberStyles.Float, CultureInfo.InvariantCulture, out double valeur))
+                    {
+                        return valeur;
+                    }
+                }
                 Console.Write("Merci d'entrer un nombre valide : ");
             }
-            return valeur;
         }
     }
 }

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace GestionClubBasket
+namespace GestionLocationVehicule
 {
     public class Agence
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace GestionClubBasket
+namespace GestionLocationVehicule
 {
     public class Location
     {
@@ -50,6 +50,15 @@ namespace GestionClubBasket
             _vehicule.MarquerDisponible();
             _terminee = true;
             Console.WriteLine($"Location terminée : {_vehicule.Decrire()} rendu par {_client.Prenom} {_client.Nom}. Total : {_prixTotal}€");
+        }
+
+        // Permet d'associer une assurance à une location déjà créée, et
+        // recalcule immédiatement le prix pour que ça se reflète partout
+        public void AjouterAssurance(Assurance assurance)
+        {
+            _assurance = assurance;
+            CalculerPrix();
+            Console.WriteLine($"Assurance {assurance.Type} ajoutée. Nouveau prix estimé : {_prixTotal}€");
         }
     }
 }

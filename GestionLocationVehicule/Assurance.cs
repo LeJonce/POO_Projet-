@@ -1,6 +1,6 @@
 using System;
 
-namespace GestionClubBasket
+namespace GestionLocationVehicule
 {
     public class Assurance
     {

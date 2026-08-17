@@ -1,4 +1,4 @@
-namespace GestionClubBasket
+namespace GestionLocationVehicule
 {
     public class Client
     {
