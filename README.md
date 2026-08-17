@@ -6,8 +6,8 @@
 | Entité    | Attributs                                    | Comportements              |
 |-----------|-----------------------------------------------|-----------------------------|
 | Vehicule  | marque, modele, immatriculation, tarifDeBase   | CalculerTarifJournalier()  |
-| Voiture   | nombrePlaces, typeCarburant                    | Demarrer()                 |
-| Moto      | cylindree                                      | Demarrer()                 |
+| Voiture   | nombrePlaces, typeCarburant                    | Décrire()                 |
+| Moto      | cylindree                                      | Décrire()                 |
 | Camion    | capaciteChargement                             | AssignerChauffeur()        |
 | Chauffeur | nom, prenom, permisPoidsLourd                  | Conduire()                 |
 | Client    | id, nom, prenom, numeroPermis                  | —                           |
