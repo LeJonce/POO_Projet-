@@ -1,10 +1,12 @@
 # Projet C#
 ## Liste des entités
 
-| Entité    | Attributs | Comportements        |
-|-----------|-----------------------------------------------|----------------------|
-| Vehicule  | marque, modele, immatriculation, tarifDeBase CalculerTarifJournalier() |
-| Voiture   | nombrePlaces, typeCarburant                    | Demarrer()|
+|## Liste des entités
+
+| Entité    | Attributs                                    | Comportements              |
+|-----------|-----------------------------------------------|-----------------------------|
+| Vehicule  | marque, modele, immatriculation, tarifDeBase   | CalculerTarifJournalier()  |
+| Voiture   | nombrePlaces, typeCarburant                    | Demarrer()                 |
 | Moto      | cylindree                                      | Demarrer()                 |
 | Camion    | capaciteChargement                             | AssignerChauffeur()        |
 | Chauffeur | nom, prenom, permisPoidsLourd                  | Conduire()                 |
