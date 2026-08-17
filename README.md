@@ -1,4 +1,3 @@
-<img width="1100" height="980" alt="diagramme_uml_location_1" src="https://github.com/user-attachments/assets/1ee805ad-2ed9-4e9b-a69f-8a6a1d429527" />
 # Projet C#
 ## Liste des entités
 
