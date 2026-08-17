@@ -31,18 +31,18 @@
  
  ## Tableau des relations
 
-| Classe A   | Relation        | Classe B   | Justification                              |
-|------------|----------------|------------|--------------------------------------------|
-| Voiture     | hérite de      | Vehicule   | Une voiture est un véhicule          |
-| Entraineur | hérite de      | Personne   | Une moto est un véhicule              |
-| Arbitre    | hérite de      | Personne   | Un arbitre est une personne                |
-| Club       | possède        | Equipe     | Un club contient une ou plusieurs équipes  |
-| Equipe     | possède        | Joueur     | Une équipe regroupe des joueurs            |
-| Equipe     | possède        | Entraineur | Une équipe a un entraîneur                 |
-| Equipe     | participe à    | Match      | Une équipe joue des matchs                 |
-| Match      | associe        | Arbitre    | Un match est arbitré                       |
-| Match      | se joue dans   | Salle      | Un match se déroule dans une salle         |      | 
+## Tableau des relations
 
+| Classe A | Relation  | Classe B  | Justification                                  |
+|----------|-----------|-----------|-------------------------------------------------|
+| Voiture  | hérite de | Vehicule  | Une voiture est un véhicule                     |
+| Moto     | hérite de | Vehicule  | Une moto est un véhicule                        |
+| Camion   | hérite de | Vehicule  | Un camion est un véhicule                       |
+| Agence   | possède   | Vehicule  | Une agence gère un parc de véhicules            |
+| Camion   | associe   | Chauffeur | Un camion nécessite un chauffeur professionnel  |
+| Location | associe   | Vehicule  | Une location porte sur un véhicule              |
+| Location | associe   | Client    | Une location est faite par un client            |
+| Location | associe   | Assurance | Une location peut inclure une assurance         |
 ## Schéma UML 
 <img width="1160" height="1220" alt="diagramme_uml_club_basket" src="https://github.com/user-attachments/assets/aafb02ab-edb8-44be-8b83-e168c7a10ea0" />
 
