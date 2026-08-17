@@ -1,49 +1,48 @@
 # Projet C#
 ## Liste des entités
 
-| Entité       | Attributs                                      | Comportements                |
-|-------------|-----------------------------------------------|------------------------------|
-| Personne    | id, nom, prenom, age     | SePresenter()                |
-| Joueur      | numero, poste                       | Jouer()                      |
-| Entraineur  | experience, licence                | Coacher()                    |
-| Arbitre     | niveau, licence                 | Arbitrer()                   |
-| Club        | nom, ville, budget        | AjouterEquipe(equipe: Equipe) |
-| Equipe      | nom, division                   | AjouterJoueur()              |
-| Match       | date, score, adversaire | Jouer()                      |
-| Salle       | nom, capacite                     | Ouvrir()                     |
+|## Liste des entités
 
-
----
+| Entité    | Attributs                                    | Comportements              |
+|-----------|-----------------------------------------------|-----------------------------|
+| Vehicule  | marque, modele, immatriculation, tarifDeBase   | CalculerTarifJournalier()  |
+| Voiture   | nombrePlaces, typeCarburant                    | Decrire()                 |
+| Moto      | cylindree                                      | Decrire()                 |
+| Camion    | capaciteChargement                             | AssignerChauffeur()        |
+| Chauffeur | nom, prenom, permisPoidsLourd                  | Conduire()                 |
+| Client    | id, nom, prenom, numeroPermis                  | —                           |
+| Assurance | type, montantJournalier                        | Souscrire()                |
+| Location  | dateDebut, dateFin, prixTotal                  | CalculerPrix(), TerminerLocation() |
+| Agence    | nom, ville                                     | AjouterVehicule()          |
 
 ### Héritage
 
-- Joueur hérite de Personne  
-- Entraineur hérite de Personne  
-- Arbitre hérite de Personne  
+- Voiture hérite de Vehicule
+- Moto hérite de Vehicule
+- Camion hérite de Vehicule
 
 ### Associations
 
-- Club possède une Equipe  
-- Equipe possède des Joueurs  
-- Equipe possède un Entraineur  
-- Match implique une Equipe  
-- Match se joue dans une Salle  
- 
- ## Tableau des relations
+- Agence possède des Vehicule
+- Camion associe un Chauffeur
+- Location associe un Vehicule
+- Location associe un Client
+- Location associe une Assurance
 
-| Classe A   | Relation        | Classe B   | Justification                              |
-|------------|----------------|------------|--------------------------------------------|
-| Joueur     | hérite de      | Personne   | Un joueur est une personne                 |
-| Entraineur | hérite de      | Personne   | Un entraîneur est une personne             |
-| Arbitre    | hérite de      | Personne   | Un arbitre est une personne                |
-| Club       | possède        | Equipe     | Un club contient une ou plusieurs équipes  |
-| Equipe     | possède        | Joueur     | Une équipe regroupe des joueurs            |
-| Equipe     | possède        | Entraineur | Une équipe a un entraîneur                 |
-| Equipe     | participe à    | Match      | Une équipe joue des matchs                 |
-| Match      | associe        | Arbitre    | Un match est arbitré                       |
-| Match      | se joue dans   | Salle      | Un match se déroule dans une salle         |      | 
+## Tableau des relations
+
+| Classe A | Relation  | Classe B  | Justification                                  |
+|----------|-----------|-----------|-------------------------------------------------|
+| Voiture  | hérite de | Vehicule  | Une voiture est un véhicule                     |
+| Moto     | hérite de | Vehicule  | Une moto est un véhicule                        |
+| Camion   | hérite de | Vehicule  | Un camion est un véhicule                       |
+| Agence   | possède   | Vehicule  | Une agence gère un parc de véhicules            |
+| Camion   | associe   | Chauffeur | Un camion nécessite un chauffeur professionnel  |
+| Location | associe   | Vehicule  | Une location porte sur un véhicule              |
+| Location | associe   | Client    | Une location est faite par un client            |
+| Location | associe   | Assurance | Une location peut inclure une assurance         |
 
 ## Schéma UML 
-<img width="1160" height="1220" alt="diagramme_uml_club_basket" src="https://github.com/user-attachments/assets/aafb02ab-edb8-44be-8b83-e168c7a10ea0" />
+<img width="1100" height="980" alt="diagramme_uml_location_1" src="https://github.com/user-attachments/assets/183a46b7-c859-4f74-9631-59d544c7fc03" />
 
 
